@@ -1,0 +1,24 @@
+{
+  "name": "spadespromise",
+  "version": "1.0.0",
+  "description": "A promisify library that based on ES6 native implementation of Promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spade69/spadesPromise.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "ES6",
+    "Promisify"
+  ],
+  "author": "Jason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spade69/spadesPromise/issues"
+  },
+  "homepage": "https://github.com/spade69/spadesPromise#readme"
+}
