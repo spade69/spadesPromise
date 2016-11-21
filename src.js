@@ -296,7 +296,7 @@ v 0.1.0 (c) Jason Lin
     builtInProp(PromisePrototype,"__NPO__",0,
         /*configurable=*/false
     );
-
+    //Promise.resolve
     builtInProp(Promise,"resolve",function Promise$resolve(msg) {
         var Constructor = this;
 
@@ -314,7 +314,7 @@ v 0.1.0 (c) Jason Lin
             resolve(msg);
         });
     });
-
+    //Promise.reject
     builtInProp(Promise,"reject",function Promise$reject(msg) {
         return new this(function executor(resolve,reject){
             if (typeof resolve != "function" || typeof reject != "function") {
@@ -324,7 +324,7 @@ v 0.1.0 (c) Jason Lin
             reject(msg);
         });
     });
-
+    //Promise.all
     builtInProp(Promise,"all",function Promise$all(arr) {
         var Constructor = this;
 
@@ -351,7 +351,7 @@ v 0.1.0 (c) Jason Lin
             },reject);
         });
     });
-
+  //Promise.race
     builtInProp(Promise,"race",function Promise$race(arr) {
         var Constructor = this;
 
