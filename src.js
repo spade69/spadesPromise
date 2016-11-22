@@ -351,7 +351,8 @@ v 0.1.0 (c) Jason Lin
             },reject);
         });
     });
-  //Promise.race
+  //Promise.race 
+  //if pass a empty array will cause foever hanging
     builtInProp(Promise,"race",function Promise$race(arr) {
         var Constructor = this;
 

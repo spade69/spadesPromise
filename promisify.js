@@ -79,8 +79,8 @@ var map=function(vals,cb){
     if(!map){
         //如果出错，则这个返回的promise就会是reject
         return Promise.all(
-            //all返回一个新的Promise当所有都resolved
-            vals.map(function(val){
+            //all返回一个新的Promise当所有mapped 的元素都为resolved
+            vals.map(function(val){ 
                 return new Promise(function(resolve){
                     cb(val,resolve); 
                 });
@@ -88,3 +88,6 @@ var map=function(vals,cb){
         );
     }
 }                 
+
+exports.getJSON=getJSON;
+exports.map=map;
