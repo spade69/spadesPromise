@@ -4,7 +4,16 @@
   "description": "A promisify library that based on ES6 native implementation of Promise",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require blanket --reporter doc > coverage.html"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "promisify.js",
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ]
+    }
   },
   "repository": {
     "type": "git",
@@ -22,6 +31,8 @@
   },
   "homepage": "https://github.com/spade69/spadesPromise#readme",
   "devDependencies": {
+    "blanket": "^1.2.3",
+    "chai": "^3.5.0",
     "mocha": "^3.1.2"
   }
 }

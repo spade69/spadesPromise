@@ -89,5 +89,17 @@ var map=function(vals,cb){
     }
 }                 
 
+//Test coverage
+exports.parseAsync=function(input,cb){
+    setTimeout(function(){
+        var result;
+        try{
+            result=JSON.parse(input);
+        }catch(e){
+            return cb(e);
+        }
+        cb(null,result);
+    },10);
+}
 exports.getJSON=getJSON;
 exports.map=map;

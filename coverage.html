@@ -1,0 +1,38 @@
+    <section class="suite">
+      <h1>Array</h1>
+      <dl>
+        <section class="suite">
+          <h1>#indexOf()</h1>
+          <dl>
+            <dt>should return -1 when the value is not present</dt>
+            <dd><pre><code>assert.equal(-1,[1,2,3].indexOf(4));</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>ArrMap</h1>
+      <dl>
+        <section class="suite">
+          <h1>#Arrmap()</h1>
+          <dl>
+            <dt>should map without error</dt>
+            <dd><pre><code>var arr=[1,2,3,4];
+assert.deepEqual([2,4,6,8],arr.map(function(index){
+    return index*2;
+}))</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>parseAsync</h1>
+      <dl>
+        <dt>parseAsync should ok</dt>
+        <dd><pre><code>spades.parseAsync('{&quot;name&quot;:&quot;JacksonTian&quot;}',function(err,data){
+    assert.ifError(err);//if 'err' is truthy then it throws an error!
+    assert.equal(data.name,'JacksonTian');
+    done();
+});</code></pre></dd>
+      </dl>
+    </section>

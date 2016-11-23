@@ -31,7 +31,7 @@ describe('ArrMap',function(){
 //         .then()
 // })
 
-describe('promise map',function(){
+/*describe('promise map',function(){
     describe('#promiseMap',function(){
         it('async request should retrun a object',function(done){
             let arr=[1,2,3,4];
@@ -43,4 +43,15 @@ describe('promise map',function(){
                 })
         })
     })
-})
+})*/
+
+//testing coverage
+describe('parseAsync',function(){
+    it('parseAsync should ok',function(done){
+        spades.parseAsync('{"name":"JacksonTian"}',function(err,data){
+            assert.ifError(err);//if 'err' is truthy then it throws an error!
+            assert.equal(data.name,'JacksonTian');
+            done();
+        });
+    });
+});
