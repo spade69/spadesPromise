@@ -8,7 +8,8 @@ spadesPromise
 v 0.1.0 (c) Jason Lin
  */
 
-//AJAX
+/*************AJAX**************************************************************
+***********************************************************************************/
 //XMLHttpRequest 这个类的每个实例都表示一个独立的请求/响应对
 //对象属性和方法允许指定请求细节和提取响应数据
 var getJSON=function(url){
@@ -33,6 +34,8 @@ var getJSON=function(url){
     return promise;
 }
 
+/*************Array.prototype.map**************************************************
+***********************************************************************************/
 //Polyfill for browser that dosen't support Array.prototype.map
 if(!Array.prototype.map){
     Array.prototype.map=function(cb,context){
@@ -89,7 +92,36 @@ var map=function(vals,cb){
     }
 }                 
 
-//Test coverage
+/***********************Object.assign****************************************/
+//Polyfill for browser that doesn't support ES5 Object.assign
+//我们使用这个函数来合并对象 helper 函数
+var combine=Object.assign(obj1,obj2);
+if(typeof Object.assign!='function'){
+    Object.assign=function(target,varArgs){//length of function is 2
+        if(target==null){ //类型错误 
+            throw new TypeError('Cannot convert undefined or null to object');
+        }
+
+        var to=Object(target);
+        for(var index=1;index<arguments.length;index++){
+            var nextSource=arguments[index];
+            if(nextSource!=null){//跳过 undefined 或者 null
+                for(var nextKey in nextSource){
+                    if(Object.prototype.hasOwnProperty.call(nextSource,nextKey)){
+                        to[nextKey]=nextSource[nextKey];
+                    }
+                }
+            }
+        }
+        return to;
+    };
+}
+
+/**CRUD的promisify！！！for Mongoose *********************
+********************************************************/
+
+
+//Test coverage测试覆盖率
 exports.parseAsync=function(input,cb){
     setTimeout(function(){
         var result;
